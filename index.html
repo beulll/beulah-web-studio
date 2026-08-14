@@ -148,12 +148,39 @@
       </div>
     </section>
 
-    <section class="cta-section" id="contact">
-      <div class="cta-content reveal">
-        <p class="eyebrow">Have a project in mind?</p>
-        <h2>Ready to build <span>something better?</span></h2>
-        <p>Tell us what you're building and let's talk about how your website can support it.</p>
-        <div class="hero-actions"><a class="button button-primary magnetic" href="https://wa.me/2348128813047?text=Hello%20Beulah%20Web%20Studio%2C%20I%27d%20like%20to%20discuss%20a%20website%20project.">Start a Project <span>↗</span></a><a class="button button-secondary" href="mailto:beulahswebstudio@gmail.com">Email Us</a></div>
+    <section class="cta-section contact-section" id="contact">
+      <div class="contact-grid">
+        <div class="cta-content reveal">
+          <p class="eyebrow">Start a conversation</p>
+          <h2>Ready to build <span>something better?</span></h2>
+          <p>Share a few details about your project. We’ll turn your answers into a clear WhatsApp enquiry so we can respond with useful next steps.</p>
+          <div class="contact-notes">
+            <div><span>01</span><p>Tell us what you need and when you would like to start.</p></div>
+            <div><span>02</span><p>Review the message before it opens in WhatsApp.</p></div>
+            <div><span>03</span><p>We’ll reply with questions, scope and a practical next step.</p></div>
+          </div>
+          <a class="contact-email" href="mailto:beulahswebstudio@gmail.com">Prefer email? beulahswebstudio@gmail.com <span>↗</span></a>
+        </div>
+
+        <form class="enquiry-form reveal" id="enquiry-form">
+          <div class="form-heading"><p class="eyebrow">Project enquiry</p><p>Usually takes less than two minutes.</p></div>
+          <div class="form-row">
+            <label for="client-name">Your name <span>*</span><input id="client-name" name="name" type="text" autocomplete="name" placeholder="e.g. Beulah" required></label>
+            <label for="client-email">Email address <span>*</span><input id="client-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+          </div>
+          <div class="form-row">
+            <label for="business-name">Business or brand<input id="business-name" name="business" type="text" autocomplete="organization" placeholder="Your business name"></label>
+            <label for="project-type">What do you need? <span>*</span><select id="project-type" name="projectType" required><option value="" disabled selected>Select a service</option><option>Business website</option><option>Landing page</option><option>Restaurant or ordering website</option><option>Website redesign</option><option>Custom feature</option><option>Not sure yet</option></select></label>
+          </div>
+          <div class="form-row">
+            <label for="budget">Estimated budget<select id="budget" name="budget"><option value="Not sure yet" selected>Not sure yet</option><option>Below ₦150,000</option><option>₦150,000 – ₦300,000</option><option>₦300,000 – ₦500,000</option><option>₦500,000+</option></select></label>
+            <label for="start-date">Preferred start date<input id="start-date" name="startDate" type="date"></label>
+          </div>
+          <label for="project-message">Tell us about the project <span>*</span><textarea id="project-message" name="message" rows="5" placeholder="What are you building, and what should the website help you achieve?" required></textarea></label>
+          <button class="button button-primary form-submit" type="submit">Send Enquiry on WhatsApp <span>↗</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-footnote">Your details stay in the message you review before sending. No account or password is required.</p>
+        </form>
       </div>
     </section>
   </main>

@@ -68,3 +68,44 @@ document.querySelectorAll('.magnetic').forEach((button) => {
     button.style.transform = '';
   });
 });
+
+
+const enquiryForm = document.querySelector('#enquiry-form');
+const formStatus = document.querySelector('#form-status');
+const startDate = document.querySelector('#start-date');
+
+if (startDate) {
+  const today = new Date();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  startDate.min = `${today.getFullYear()}-${month}-${day}`;
+}
+
+enquiryForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!enquiryForm.reportValidity()) return;
+
+  const data = new FormData(enquiryForm);
+  const dateValue = data.get('startDate');
+  const preferredDate = dateValue
+    ? new Date(`${dateValue}T12:00:00`).toLocaleDateString('en-NG', { day: 'numeric', month: 'long', year: 'numeric' })
+    : 'Not specified';
+
+  const message = [
+    'Hello Beulah Web Studio, I would like to discuss a website project.',
+    '',
+    `Name: ${data.get('name')}`,
+    `Email: ${data.get('email')}`,
+    `Business/brand: ${data.get('business') || 'Not specified'}`,
+    `Service: ${data.get('projectType')}`,
+    `Estimated budget: ${data.get('budget') || 'Not specified'}`,
+    `Preferred start date: ${preferredDate}`,
+    '',
+    `Project details: ${data.get('message')}`
+  ].join('\n');
+
+  const whatsappUrl = `https://wa.me/2348128813047?text=${encodeURIComponent(message)}`;
+  formStatus?.classList.remove('error');
+  if (formStatus) formStatus.textContent = 'Your enquiry is ready. WhatsApp will open so you can review and send it.';
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+});
