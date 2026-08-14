@@ -1,0 +1,15 @@
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs and generated browser artifacts
+*.log
+screenshots/
+playwright-report/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
