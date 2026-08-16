@@ -76,6 +76,7 @@ button { font: inherit; }
 .service-card p, .reason p, .process-step p, .about-copy p, .project-info > p, .cta-content > p { color: var(--muted); font-size: .93rem; }
 .work-section { padding-top: 60px; }
 .project-card { display: grid; grid-template-columns: 1.25fr .75fr; min-height: 460px; border: 1px solid var(--line); background: var(--surface); overflow: hidden; transition: transform .5s, box-shadow .5s; }
+.project-stack { display:grid; gap:26px; }
 .project-card:hover { transform: translateY(-7px); box-shadow: 0 25px 70px rgba(0,0,0,.4); }
 .project-preview { position: relative; min-height: 460px; padding: 66px 55px 35px; overflow: hidden; background: radial-gradient(circle at 70% 30%, rgba(212,175,55,.22), transparent 32%), linear-gradient(135deg, #232018, #080808 75%); }
 .project-preview::before { content: ""; position: absolute; width: 440px; height: 440px; right: -180px; bottom: -230px; border: 1px solid rgba(212,175,55,.2); border-radius: 50%; }
@@ -95,8 +96,10 @@ button { font: inherit; }
 .text-link { margin-top: 28px; color: var(--gold); font-size: .85rem; font-weight: 700; }
 .text-link span { margin-left: 8px; transition: transform .3s; display: inline-block; }
 .text-link:hover span, .text-link:focus-visible span { transform: translate(4px, -4px); }
+.concept-preview { position:relative; overflow:hidden; min-height:460px; padding:64px 54px 35px; }.concept-browser { position:absolute; top:20px; left:22px; right:22px; display:flex; align-items:center; gap:6px; padding-bottom:13px; border-bottom:1px solid currentColor; opacity:.7; }.concept-browser span { width:7px; height:7px; border-radius:50%; background:currentColor; }.concept-browser small { margin-left:10px; font-size:.58rem; letter-spacing:.08em; }.concept-kicker { position:relative; z-index:2; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; }.concept-preview h3 { position:relative; z-index:2; margin:18px 0 20px; font:800 clamp(2.6rem,5vw,5.3rem)/.88 Manrope; letter-spacing:-.08em; }.concept-caption { position:relative; z-index:2; max-width:310px; font-size:.8rem; line-height:1.55; }.concept-button { position:absolute; z-index:2; bottom:34px; left:54px; display:inline-flex; gap:20px; padding:10px 14px; border:1px solid currentColor; font-size:.68rem; }.beauty-preview { color:#372c29; background:#dec4ba; }.beauty-preview h3 em { color:#ad4e39; font-style:normal; }.beauty-circle { position:absolute; right:9%; bottom:10%; display:grid; place-items:center; width:132px; height:132px; border:1px solid rgba(55,44,41,.6); border-radius:50%; transform:rotate(-15deg); font-size:.67rem; line-height:1.2; letter-spacing:.1em; text-align:center; }.beauty-preview::after { content:""; position:absolute; top:-100px; right:-85px; width:330px; height:330px; border:1px solid rgba(55,44,41,.3); border-radius:50%; box-shadow:0 0 0 55px rgba(55,44,41,.04); }.logistics-preview { color:#13282d; background:#e7edee; }.logistics-preview h3 em { color:#cf583a; font-style:normal; }.route-line { position:absolute; right:8%; top:35%; width:52%; height:2px; background:#13282d; transform:rotate(-26deg); }.route-line i { position:absolute; top:50%; width:13px; height:13px; border-radius:50%; background:#cf583a; transform:translateY(-50%); }.route-line i:nth-child(1){left:0}.route-line i:nth-child(2){left:48%;background:#e6ff4f}.route-line i:nth-child(3){right:0;background:#13282d}.delivery-stat { position:absolute; right:7%; bottom:20%; display:grid; gap:4px; padding:14px; border:1px solid #13282d; background:#e6ff4f; }.delivery-stat strong { font:800 2.2rem/.8 Manrope; letter-spacing:-.1em; }.delivery-stat span { font-size:.55rem; text-transform:uppercase; letter-spacing:.1em; }
 
 .pricing-section { padding-top: 80px; }
+.price-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:18px; }.starter-card { display:flex; flex-direction:column; gap:32px; padding:40px; border:1px solid rgba(212,175,55,.35); background:linear-gradient(135deg,rgba(212,175,55,.13),rgba(16,16,16,.98) 55%); }.starter-card h3 { font:800 clamp(2.7rem,5vw,4.6rem)/1 Manrope; letter-spacing:-.07em; margin:10px 0 15px; }.starter-card h3 span { font-size:1.2rem; color:var(--gold); }.starter-card p:not(.eyebrow) { color:var(--muted); }.starter-card ul { display:grid; gap:10px; list-style:none; flex:1; }.starter-card li { color:#d2d0ca; font-size:.82rem; }.starter-card li::before { content:"✓"; color:var(--gold); margin-right:9px; }.starter-card .button { width:100%; }
 .price-card { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 50px; padding: 55px; border: 1px solid rgba(212,175,55,.35); background: linear-gradient(135deg, rgba(212,175,55,.09), rgba(16,16,16,.98) 45%); overflow: hidden; }
 .price-card::before { content: ""; position: absolute; width: 320px; height: 320px; right: -160px; top: -160px; border-radius: 50%; border: 1px solid rgba(212,175,55,.18); animation: pricePulse 5s ease-in-out infinite; }
 .price-card h3 { font: 800 clamp(3rem, 6vw, 5.4rem)/1 Manrope; letter-spacing: -.06em; margin: 10px 0 15px; }
@@ -156,7 +159,7 @@ button { font: inherit; }
   .project-card { grid-template-columns: 1fr; }
   .project-preview { min-height: 390px; }
   .project-info { padding: 35px; }
-  .price-card { grid-template-columns: 1fr; gap: 30px; padding: 35px; }
+  .price-grid { grid-template-columns:1fr; }.price-card { grid-template-columns: 1fr; gap: 30px; padding: 35px; }
   .price-card ul { grid-template-columns: 1fr; }
   .price-card .button { width: 100%; }
   .about-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -180,8 +183,9 @@ button { font: inherit; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .button { width: 100%; }
   .hero-proof { gap: 10px 15px; }
-  .project-preview { min-height: 360px; padding: 62px 25px 35px; }
+  .project-preview,.concept-preview { min-height: 360px; padding: 62px 25px 35px; }
   .project-label { left: 25px; }
+  .concept-button { left:25px; }.beauty-circle { width:105px; height:105px; right:7%; bottom:13%; font-size:.56rem; }.delivery-stat { right:5%; bottom:16%; }
   .floating-wa { right: 18px; bottom: 18px; }
   .footer { padding-top: 35px; }
 }
